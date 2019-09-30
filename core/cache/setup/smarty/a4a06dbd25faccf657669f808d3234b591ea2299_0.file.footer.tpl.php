@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-09-26 11:00:43
+/* Smarty version 3.1.33, created on 2019-09-30 08:36:52
   from 'C:\domains\newprojects\mega-son\www\setup\templates\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d8c702b19c701_22723515',
+  'unifunc' => 'content_5d9194747290a6_41545765',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a4a06dbd25faccf657669f808d3234b591ea2299' => 
     array (
       0 => 'C:\\domains\\newprojects\\mega-son\\www\\setup\\templates\\footer.tpl',
-      1 => 1550128366,
+      1 => 1569821522,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d8c702b19c701_22723515 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d9194747290a6_41545765 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\domains\\newprojects\\mega-son\\www\\core\\model\\smarty\\plugins\\modifier.replace.php','function'=>'smarty_modifier_replace',),));
 ?>
         </div>

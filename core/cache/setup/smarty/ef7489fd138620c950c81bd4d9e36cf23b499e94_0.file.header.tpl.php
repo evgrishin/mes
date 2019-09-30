@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-09-26 11:00:42
+/* Smarty version 3.1.33, created on 2019-09-30 08:37:17
   from 'C:\domains\newprojects\mega-son\www\setup\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d8c702acb4bf6_64779923',
+  'unifunc' => 'content_5d91948db9a528_98933563',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ef7489fd138620c950c81bd4d9e36cf23b499e94' => 
     array (
       0 => 'C:\\domains\\newprojects\\mega-son\\www\\setup\\templates\\header.tpl',
-      1 => 1550128366,
+      1 => 1569821522,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d8c702acb4bf6_64779923 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d91948db9a528_98933563 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
