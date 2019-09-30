@@ -675,7 +675,7 @@ MODx.ux.Ace.createModxMixedMode = function(Mode) {
                     regex : "\\[\\[\\-.*?\\]\\]"
                 },
                 {
-                    token : "property-string.text.modx",
+                    token : "text.modx",
                     regex : "\\s+"
                 }
             ];
