@@ -113,5 +113,6 @@
         </div>
     </footer>
 </main>
+ SQL: [^qt^] ([^q^]), PHP: [^p^], MEM: [^m^], ALL: [^t^] ([^s^])
 </body>
 </html>
