@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model package="ploader" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" version="1.1">
+	<object class="plConnectors" table="pl_connectors" extends="xPDOObject">
+		<field key="id_connecter" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
+		<field key="provider" dbtype="varchar" precision="20" phptype="string" null="false" />
+		<field key="connection_type" dbtype="int" precision="11" phptype="integer" null="false" />
+		<field key="url_sitemap" dbtype="varchar" precision="255" phptype="string" null="false" index="unique" />
+		<field key="load_datetime" dbtype="datetime" phptype="datetime" null="false" />
+		<field key="log" dbtype="text" phptype="string" null="false" />
+
+		<index alias="PRIMARY" name="PRIMARY" primary="true" unique="true" type="BTREE" >
+			<column key="id_connecter" length="" collation="A" null="false" />
+		</index>
+		<index alias="url_sitemap" name="url_sitemap" primary="false" unique="true" type="BTREE" >
+			<column key="url_sitemap" length="" collation="A" null="false" />
+		</index>
+	</object>
+	<object class="plLoads" table="pl_loads" extends="xPDOObject">
+		<field key="id_load" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
+		<field key="url" dbtype="varchar" precision="255" phptype="string" null="false" index="unique" />
+		<field key="page_type" dbtype="varchar" precision="10" phptype="string" null="false" />
+		<field key="id_pproduct" dbtype="int" precision="11" phptype="integer" null="true" />
+		<field key="url_product_name" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="provider" dbtype="varchar" precision="20" phptype="string" null="false" />
+		<field key="id_category" dbtype="int" precision="11" phptype="integer" null="false" />
+		<field key="id_manufacturer" dbtype="int" precision="11" phptype="integer" null="false" />
+		<field key="load_datetime" dbtype="datetime" phptype="datetime" null="true" />
+		<field key="exist_url" dbtype="int" precision="11" phptype="integer" null="false" default="1" />
+		<field key="active" dbtype="int" precision="11" phptype="integer" null="false" default="1" />
+
+		<index alias="PRIMARY" name="PRIMARY" primary="true" unique="true" type="BTREE" >
+			<column key="id_load" length="" collation="A" null="false" />
+		</index>
+		<index alias="url" name="url" primary="false" unique="true" type="BTREE" >
+			<column key="url" length="" collation="A" null="false" />
+		</index>
+		<index alias="id_load" name="id_load" primary="false" unique="false" type="BTREE" >
+			<column key="id_load" length="" collation="A" null="false" />
+		</index>
+	</object>
+</model>
