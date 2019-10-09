@@ -4,33 +4,11 @@
 
  */
 
-require_once(_PS_MODULE_DIR_.'egploader/classes/loadmanager.php');
 
-class pconnecter extends ObjectModel
+class pconnecter
 {
-    /** @var string Name */
-    public $id_connecter;
-    public $provider;
-    public $connection_type;
-    public $url_sitemap;
-    public $load_datetime;
-    public $log;
-
-    public $url_arrays = array();
 
 
-
-
-    public function delete()
-    {
-        $sql = 'SELECT * FROM '._DB_PREFIX_.'egploader_connecter
-		WHERE id_connecter ='.(int)$this->id_connecter;
-
-        if (!Db::getInstance()->executeS($sql))
-            return(false);
-
-        return (parent::delete());
-    }
 
     public static function getConnecter($id_connecter=null)
     {
@@ -42,20 +20,6 @@ class pconnecter extends ObjectModel
         return (Db::getInstance()->executeS($sql));
     }
 
-    public function fillPconnecter($id_connecter)
-    {
-        $res = pconnecter::getConnecter($id_connecter);
-        foreach ($res as $r)
-        {
-            $this->id_connecter = $r['id_connecter'];
-            $this->provider = $r['provider'];
-            $this->connection_type = $r['connection_type'];
-            $this->url_sitemap = $r['url_sitemap'];
-            $this->load_datetime = $r['load_datetime'];
-            $this->log = $r['log'];
-        }
-
-    }
 
     public function download($id_connecter = null, $actions = "execute")
     {

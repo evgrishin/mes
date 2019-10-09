@@ -9,6 +9,7 @@
  * @property string $provider
  * @property integer $id_category
  * @property integer $id_manufacturer
+ * @property integer $id_theme
  * @property datetime $load_datetime
  * @property integer $exist_url
  * @property integer $active

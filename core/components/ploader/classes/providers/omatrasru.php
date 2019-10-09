@@ -1,5 +1,6 @@
 <?php
-require_once(_PS_MODULE_DIR_.'egploader/classes/provider.php');
+
+require_once (MODX_CORE_PATH.'components/ploader/classes/provider.php');
 
 class omatrasru extends provider{
 

@@ -14,6 +14,7 @@ $xpdo_meta_map['plLoads']= array (
     'provider' => NULL,
     'id_category' => NULL,
     'id_manufacturer' => NULL,
+    'id_theme' => NULL,
     'load_datetime' => NULL,
     'exist_url' => 1,
     'active' => 1,
@@ -73,6 +74,13 @@ $xpdo_meta_map['plLoads']= array (
       'null' => false,
     ),
     'id_manufacturer' => 
+    array (
+      'dbtype' => 'int',
+      'precision' => '11',
+      'phptype' => 'integer',
+      'null' => false,
+    ),
+    'id_theme' => 
     array (
       'dbtype' => 'int',
       'precision' => '11',

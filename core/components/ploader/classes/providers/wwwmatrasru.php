@@ -1,6 +1,6 @@
 <?php
 
-require_once(_PS_MODULE_DIR_.'egploader/classes/provider.php');
+require_once (MODX_CORE_PATH.'components/ploader/classes/provider.php');
 
 class wwwmatrasru  extends provider{
 
@@ -49,8 +49,51 @@ class wwwmatrasru  extends provider{
         return $features;
     }
 
+    //returt array( price, old price, modification
     public function getPrice(){
 
+        $prod_id = 0;
+        $w = 0;
+        $l = 0;
+        foreach ($this->parser->find('span.to-favorites') as $a)
+        {
+            $prod_id = $a->attr['data-id'];
+            foreach ($this->parser->find('input[id=good-provider-size]') as $si) {
+                $w = $si->attr['data-width'];
+                $l = $si->attr['data-length'];
+            }
+        }
+
+        $url = 'https://www.matras.ru/api/catalog/item/'.$prod_id.'?common=true&sizes=true&kits=true&colors=true&filter_width='.$w.'&filter_length='.$l;
+
+        $json_text = $this->getContentItem($url, $this->id, $pref = "api", $this->proxy, $this->use_cache, $cookie_use = false);
+
+        $json = json_decode($json_text, true);
+
+        $modifications = array();
+        $i=0;
+        foreach ($json['sizes'] as $item)
+        {
+            if($i==0)
+            {
+                $result['price'] = $item['price'];
+                $result['old_price'] = $item['discount_price'];
+            }
+
+            $modifications[] = array(
+                'name' => 'size',
+                'price' => $item['price'],
+                'old_price' => $item['discount_price'],
+                'options' => array(
+                    'size' => $item['w'].'x'.$item['h'],
+                )
+            );
+
+            $i++;
+        }
+        $result['modifications'] = $modifications;
+        return $result;
+        /*
         $price = "";
 
         if( count($this->parser->find('div.sizes-grid')))
@@ -67,9 +110,9 @@ class wwwmatrasru  extends provider{
                 }
             }
 
-        }
+        }*/
 
-        return $price;
+      //  return $price;
     }
 
     public function getPriceDiscount(){
@@ -84,15 +127,13 @@ class wwwmatrasru  extends provider{
     }
 
     public function getImages(){
-        $images_url = "";
-        $i = 0;
+        $images_url = array();
+
         foreach ($this->parser->find('a.various img') as $img){
-            $images_url = "https://www.matras.ru".$img->src;
-            $i++;
+            $images_url[] = "https://www.matras.ru".$img->src;
         }
         foreach ($this->parser->find('a.thumb') as $a){
-            $images_url .= ",https://www.matras.ru".$a->href;
-            $i++;
+            $images_url[] = "https://www.matras.ru".$a->href;
         }
 
         return $images_url;
