@@ -468,7 +468,8 @@ class loadmanager
                 $loads = array_merge($loads, $loads_tmp);
             }
             else
-                $this->result['errors'][]=$provider->errors;
+                foreach ($provider->errors as $err)
+                    $this->result['errors'][]= $err;
 
         }
 

@@ -88,20 +88,20 @@ abstract class provider
                     'code' => 300,
                     'id' => $id,
                     'url' => $url,
-                    'message' => 'не загружен из кэша!');
+                    'message' => 'cannot load from cache!');
             else{
                 if($proxy)
                     $this->errors[] = array(
                         'code' => 301,
                         'id' => $id,
                         'url' => $url,
-                        'message' => 'не загружен через proxy '.$proxy);
+                        'message' => 'cannot load from proxy'.$proxy);
                 else
                     $this->errors[] = array(
                         'code' => 303,
                         'id' => $id,
                         'url' => $url,
-                        'message' => 'не загружен!');
+                        'message' => 'not load!');
             }
 
 
